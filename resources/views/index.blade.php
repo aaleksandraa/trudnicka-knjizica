@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.profile')
 
 @section('title', 'Home')
 

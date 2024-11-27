@@ -28,10 +28,10 @@
                     <div class="bg-white p-3 mt-3 border rounded">
                         <h5 class="text-primary">Osnovne informacije</h5>
                         <div class="row align-items-center mb-3">
-                            <div class="col-md-2">
+                            <div class="col-md-3 text-nowrap">
                                 <label for="datum_pregleda" class="form-label">Datum pregleda:</label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-7">
                                 <input type="text" name="datum_pregleda" id="datum_pregleda" class="form-control" placeholder="D.M.Y">
                             </div>
                         </div>
@@ -80,8 +80,8 @@
                             <div class="col-md-8"><input type="text" name="ng" class="form-control" placeholder="Unesite NG"></div>
                         </div>
                         <div class="row align-items-center mb-3">
-                            <div class="col-md-2"><label for="tezina_prirast" class="form-label">Težina prirast:</label></div>
-                            <div class="col-md-8"><input type="text" name="tezina_prirast" class="form-control" placeholder="Unesite težinu"></div>
+                            <div class="col-md-3"><label for="tezina_prirast" class="form-label">Težina prirast:</label></div>
+                            <div class="col-md-7"><input type="text" name="tezina_prirast" class="form-control" placeholder="Unesite težinu"></div>
                         </div>
                         <div class="row align-items-center mb-3">
                             <div class="col-md-2"><label for="sa" class="form-label">SA:</label></div>
@@ -96,8 +96,8 @@
                             <div class="col-md-8"><input type="text" name="varikisi" class="form-control" placeholder="Unesite varikise"></div>
                         </div>
                         <div class="row align-items-center mb-3">
-                            <div class="col-md-2"><label for="visina_fundusa_uterusa" class="form-label">Visina fundusa uterusa:</label></div>
-                            <div class="col-md-8"><input type="text" name="visina_fundusa_uterusa" class="form-control" placeholder="Unesite visinu fundusa uterusa"></div>
+                            <div class="col-md-3 text-nowrap"><label for="visina_fundusa_uterusa" class="form-label">Visina fundusa uterusa:</label></div>
+                            <div class="col-md-7"><input type="text" name="visina_fundusa_uterusa" class="form-control" placeholder="Unesite visinu fundusa uterusa"></div>
                         </div>
                         <div class="row align-items-center mb-3">
                             <div class="col-md-2"><label for="vs" class="form-label">VS:</label></div>

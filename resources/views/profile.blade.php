@@ -6,7 +6,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-sm-3">
+        <div class="col-sm-4">
             
             <div class="bg-white p-3 mt-4">                              
                 <p><strong>Ime i prezime:</strong> {{ $user->ime }}</p>                
