@@ -53,7 +53,7 @@
                         @foreach($users as $user)
                             @if($user->SuperAdmin == 0)
                                 <div class="user-card mb-3 p-3 shadow-sm">
-                                    <p class="fw-bold fs-5">{{ $user->ime }}</p>
+                                    <p class="fw-bold">{{ $user->ime }}</p>
                                     <p><strong>Datum rođenja:</strong> {{ \Carbon\Carbon::parse($user->datum_rodjenja)->format('d.m.Y.') }}</p>
                                     <p><strong>Adresa:</strong> {{ $user->adresa }}</p>
                                     <p><strong>Zanimanje:</strong> {{ $user->zanimanje }}</p>
@@ -99,6 +99,12 @@
     </script>
 
     <style>
+     
+     
+     input#searchInput {
+            font-size: 1.5em!important;
+            } 
+        
         /* Mobile card styles */
         .user-card {
             background-color: #ffffff;
@@ -106,16 +112,15 @@
             border-radius: 8px;
             padding: 20px;
             width: 100%; /* Full width */
-            font-size: 1.5rem; /* Slightly larger text */
         }
 
         .user-card p {
-            margin: 8px 0; /* Increase spacing between lines */
-            line-height: 1.5; /* Better readability */
+            margin: 8px 0;
+            line-height: 1.5;
         }
 
         .user-card .btn {
-            font-size: 1rem;
+            font-size: 1.5rem;
             padding: 10px;
         }
 
@@ -128,22 +133,37 @@
         /* General styling */
         .container {
             margin-top: 20px;
+            max-width: 100%;
+        }
+
+        div#userMobileList {
+            font-size: 2rem;
         }
 
         /* Ensure mobile view is comfortable */
         @media (max-width: 768px) {
-            body {
+            .container {
+                width: 100%!important; /* Full width for mobile */
                 padding: 0 10px; /* Add padding for smaller screens */
             }
 
             .user-card {
-                margin-bottom: 20px; /* Add spacing between cards */
+                margin-bottom: 20px;
                 font-size: 1.1rem; /* Larger font size for readability */
             }
 
             .user-card p {
-                font-size: 1rem; /* Text size adjustment for mobile */
+                font-size: 2rem; /* Text size adjustment for mobile */
             }
-        }
+
+        
+
+            p.fw-bold.fs-5 {
+            font-size: 2.2rem !important;
+            }
+
+            
+    }
+            
     </style>
 @endsection

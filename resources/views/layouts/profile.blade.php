@@ -15,19 +15,33 @@
 
         .navbar-dark .navbar-nav .nav-link {
             color: #FFF;
+            font-size: 1.6rem!important; /* Postavljena veličina fonta */
         }
 
         .navbar-dark .navbar-nav .nav-link:hover {
             color: #07b9ff;
         }
 
-        .navbar-toggler {
-            border-color: rgba(255, 255, 255, 0.1);
+        /* Stil za mobilni meni u jednom redu */
+        .navbar-nav.d-lg-none {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
         }
 
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        .navbar-nav.d-lg-none .nav-item {
+            margin-right: 35px; /* Razmak između stavki */
         }
+
+        .navbar-nav.d-lg-none .nav-item {
+            margin-right: 20px; /* Razmak između stavki */
+        }
+
+        /* Poslednja stavka bez dodatnog razmaka */
+        .navbar-nav.d-lg-none .nav-item:last-child {
+            margin-right: 0;
+        }
+
     </style>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
@@ -35,15 +49,31 @@
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="#">Trudnička knjižica</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            
+            <!-- Mobilni meni (jedan red, bez hamburger menija) -->
+            <ul class="navbar-nav d-lg-none">
+                @if(auth()->check() && auth()->user()->SuperAdmin)
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Početna</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">Dodaj novu trudnicu</a>
+                </li>
+                @endif
+                <li class="nav-item">
+                    <form action="{{ route('logout') }}" method="POST" class="d-inline">
+                        @csrf
+                        <button type="submit" class="nav-link btn btn-link text-white">Odjavi se</button>
+                    </form>
+                </li>
+            </ul>
+            
+            <!-- Desktop meni ostaje nepromenjen -->
             <div class="collapse navbar-collapse" id="navbarNav">
-                <!-- Glavni meni vidljiv na desktopu -->
                 <ul class="navbar-nav d-none d-lg-flex">
                     @if(auth()->check() && auth()->user()->SuperAdmin)
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Početna stranica</a>
+                        <a class="nav-link" href="/">Početna</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/register">Dodaj novu trudnicu</a>
@@ -51,20 +81,7 @@
                     @endif
                 </ul>
 
-                <!-- Logout dugme poravnato desno -->
                 <ul class="navbar-nav ms-auto d-none d-lg-flex">
-                    @auth
-                    <li class="nav-item">
-                        <form action="{{ route('logout') }}" method="POST" class="d-inline">
-                            @csrf
-                            <button type="submit" class="nav-link btn btn-link text-white">Odjavi se</button>
-                        </form>
-                    </li>
-                    @endauth
-                </ul>
-
-                <!-- Hamburger meni (Logout dugme) -->
-                <ul class="navbar-nav d-lg-none">
                     @auth
                     <li class="nav-item">
                         <form action="{{ route('logout') }}" method="POST" class="d-inline">
