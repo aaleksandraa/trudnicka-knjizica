@@ -15,7 +15,7 @@
 
         .navbar-dark .navbar-nav .nav-link {
             color: #FFF;
-            font-size: 1.6rem!important; /* Postavljena veličina fonta */
+            font-size: 1.1rem!important; /* Postavljena veličina fonta */
         }
 
         .navbar-dark .navbar-nav .nav-link:hover {
